@@ -1,0 +1,72 @@
+.sec5-top{
+    text-align: center;
+    margin-top: 80px;
+}
+.sec5-tag{
+    margin-bottom: 20px;
+}
+.sec5-title{
+    margin-bottom: 15px;
+    font-size: 60px;
+}
+.sec5-p{
+    font-size: 18px;
+}
+.sec5-container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+    padding: 60px 40px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+.sec5-card{
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1/1.1;
+}
+.sec5-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: 0.4s ease;
+}
+.sec5-label-wrapper{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    width: 80%;
+    height: 50px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+.sec5-label{
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 14px;
+    gap: 8px;
+    transition: color 0.3s ease;
+}
+.sec5-card:hover .sec5-label-wrapper {
+    background-color: #a73309; 
+}
+
+.sec5-card:hover .sec5-label {
+    color: #ffffff; 
+}
+.sec5-card:hover .sec5-img {
+    transform: scale(1.1); /* Zoom in by 10% */
+}
+

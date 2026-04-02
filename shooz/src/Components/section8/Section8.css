@@ -1,0 +1,32 @@
+.sec8-container{
+    display: flex;
+    margin-top: 60px;
+}
+.sec8-content{
+    text-align: left;
+    margin-top: 80px;
+    padding-left: 60px;
+    padding-right: 50px;
+}
+.sec8-tag{
+    margin-bottom: 20px;
+}
+.sec8-title{
+    margin-bottom: 20px;
+    font-size: 70px;
+}
+.sec8-des{
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+.sec8-image{
+    padding-right: 70px;
+}
+.sec8-btn{
+    border: none;
+    background-color: brown;
+    color: white;
+    height: 60px;
+    width: 180px;
+    border-radius: 2px;
+}

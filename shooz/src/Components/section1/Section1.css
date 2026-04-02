@@ -1,0 +1,146 @@
+.sec1-container {
+  width: 100%;
+  height: 80vh;
+}
+
+.sec1-swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.sec1-slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.sec1-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sec1-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+/* Base content */
+.sec1-content {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  z-index: 2;
+  max-width: 600px;
+}
+
+/* RIGHT (Slide 1) */
+.sec1-content.right {
+  right: 8%;
+  text-align: left;
+}
+
+/* LEFT (Slide 2) */
+.sec1-content.left {
+  left: 8%;
+  text-align: left;
+}
+
+/* CENTER (Slide 3) */
+.sec1-content.center {
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* Text styles */
+.sec1-tag {
+  font-size: 12px;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+  color: #ddd;
+}
+
+.sec1-title {
+  font-size: 56px;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.sec1-subtitle {
+  font-size: 18px;
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+/* Button */
+.sec1-btn {
+  background: #c94b55;
+  color: white;
+  border: none;
+  padding: 14px 32px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.sec1-btn:hover {
+  background: #a93c45;
+}
+
+/* Pagination */
+.swiper-pagination-bullet {
+  background: white;
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+  background: #ff4d5a;
+  opacity: 1;
+}
+
+/* Responsive */
+@media (min-width: 820px) {
+  .sec1-container {
+    height: 60vh; /* Adjusting height for the taller 820x1180 aspect ratio */
+  }
+
+  .sec1-content {
+    max-width: 550px;
+  }
+
+  /* Restore Original Positions for Larger Screens */
+  .sec1-content.right {
+    left: auto !important;
+    right: 8% !important;
+    text-align: left;
+  }
+
+  .sec1-content.left {
+    left: 8% !important;
+    right: auto !important;
+    text-align: left;
+  }
+
+  .sec1-title {
+    font-size: 48px; /* Mid-point between mobile and desktop */
+  }
+
+  .sec1-subtitle {
+    font-size: 17px;
+  }
+}
+
+/* --- Desktop Restore (Above 1024px) --- */
+@media (min-width: 1024px) {
+  .sec1-container {
+    height: 80vh;
+  }
+  
+  .sec1-title {
+    font-size: 56px;
+  }
+}

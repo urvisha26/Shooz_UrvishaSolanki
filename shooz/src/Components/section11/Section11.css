@@ -1,0 +1,69 @@
+.sec11-container{
+    text-align: left;
+    margin-top: 20px;
+    padding: 0 60px;
+    margin-bottom: -100px;
+}
+.sec11-tag{
+    font-size: 15px;
+    margin-bottom: 1px;
+    color: grey;
+}
+.sec11-title{
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+.sec11-des{
+    font-size: 17px;
+    margin-bottom: 30px;
+    color: grey;
+}
+.sec11-content{
+    display: flex;
+}
+.sec11-left{
+    position: relative;
+}
+.sec11-left img{
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.sec11-left-text-overlay{
+    position: relative;
+    bottom: 120px;
+    left: 20px;
+    color: white;
+    font-size: 20px;
+    line-height: 2;
+}
+.sec11-right{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.sec11-card{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-left: -140px;
+}
+.sec11-card img{
+    width: 250px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+.sec11-card-text p{
+    color: #888;
+    font-size: 20px;
+    margin-bottom: 5px;
+    
+}
+.sec11-card-text h4{
+    margin: 0;
+    font-size: 22px;
+    margin-right: -200px;
+}

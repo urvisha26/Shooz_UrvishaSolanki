@@ -1,0 +1,29 @@
+.sec9-container{
+    display: flex;
+    justify-content: space-between;
+    gap: 200px;
+    background: linear-gradient(
+    90deg, 
+    #8e72c1 0%,    /* Soft Lavender (Left) */
+    #704a82 45%,   /* Deep Plum (Middle-Left) */
+    #8d435f 75%,   /* Muted Magenta (Middle-Right) */
+    #b33d45 100%   /* Brick Red (Right) */
+  );
+    height: 100px;
+}
+.sec9-text{
+    text-align: right;
+    margin-left: 200px;
+    margin-top: 40px;
+    font-size: 25px;
+    color: white;
+}
+.sec9-btn{
+    margin-top: 24px;
+    margin-right: 200px;
+    height: 50px;
+    width:200px;
+    border: none;
+    color: white;
+    background-color: rgb(109, 89, 200);
+}
