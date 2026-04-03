@@ -7,7 +7,7 @@ const products = [
     id: 1,
     name: "Classic White Tennis Sneakers",
     brand: "SportyFeet",
-    price: 25.00,
+    price: 25.0,
     images: ["/img/sec3-1.webp", "/img/sec3-2.webp", "/img/sec3-3.webp"],
     desc: "Comfortable everyday sneakers with a clean look."
   },
@@ -15,7 +15,7 @@ const products = [
     id: 2,
     name: "Waterproof Hiking Boots",
     brand: "TrailGear",
-    price: 25.00,
+    price: 25.0,
     images: ["/img/sec3-2.webp", "/img/sec3-1.webp"],
     desc: "Perfect for outdoor adventures in all weather."
   },
@@ -23,7 +23,7 @@ const products = [
     id: 3,
     name: "Classic Leather Sneakers",
     brand: "UrbanStep",
-    price: 21.00,
+    price: 21.0,
     images: ["/img/sec3-3.webp", "/img/sec3-1.webp"],
     desc: "Stylish leather sneakers for casual wear."
   },
@@ -31,10 +31,25 @@ const products = [
     id: 4,
     name: "High-Top Canvas Sneakers",
     brand: "TrendyFeet",
-    price: 25.00,
+    price: 25.0,
     images: ["/img/sec3-4.webp", "/img/sec3-2.webp"],
     desc: "Trendy high-tops with durable canvas material."
   },
+];
+
+const faqData = [
+  {
+    question: "Is the shipping free?",
+    answer: "Yes, we offer free shipping on all orders over $100."
+  },
+  {
+    question: "When will I receive my item?",
+    answer: "Standard shipping takes 3-5 business days depending on your location."
+  },
+  {
+    question: "Can I change or return my item?",
+    answer: "We offer a 30-day easy return policy for all unused items."
+  }
 ];
 
 function ProDetails() {
@@ -47,14 +62,19 @@ function ProDetails() {
   const [qty, setQty] = useState(1);
   const [selectedSize, setSelectedSize] = useState("M");
   const [activeTab, setActiveTab] = useState('Description');
+  const [activeFaq, setActiveFaq] = useState(null);
 
   if (!product) return <h2>Product not found</h2>;
+
+  const toggleFaq = (index) => {
+    setActiveFaq(activeFaq === index ? null : index);
+  };
 
   return (
     <div className="prodetails-container">
       <button className="back-btn" onClick={() => navigate(-1)}>← Back</button>
 
-      {/* TOP SECTION: MAIN PRODUCT INFO */}
+      {/* 1. MAIN PRODUCT INFO */}
       <div className="prodetails-grid">
         <div className="pro-left">
           <div className="main-image">
@@ -116,6 +136,7 @@ function ProDetails() {
             <p><strong>Availability:</strong> In Stock</p>
           </div>
           <hr />
+          
           <div className="accordion">
             <details>
               <summary>Shipping Information</summary>
@@ -156,11 +177,9 @@ function ProDetails() {
         </div>
       </div>
 
-      {/* BOTTOM SECTION: TABS & RELATED PRODUCTS */}
+      {/* 2. TABS & RELATED PRODUCTS */}
       <div className="info-tabs-wrapper">
         <div className="info-tabs-grid">
-          
-          {/* Left: Tabbed Content */}
           <div className="tabs-container">
             <div className="tab-header">
               {['Description', 'Material', 'Reviews'].map((tab) => (
@@ -174,17 +193,17 @@ function ProDetails() {
               ))}
             </div>
             <div className="tab-content">
-                 {activeTab === 'Description' && (
-                    <> <p> Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui. Aenean ut eros et nisl sagittis vestibulum. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. Sed lectus. Donec mollis hendrerit risus. Phasellus nec sem in justo pellentesque facilisis. Etiam imperdiet imperdiet orci. Nunc nec neque. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Maecenas malesuada.</p>
-                             <p> Praesent congue erat at massa. Sed cursus turpis vitae tortor. Donec posuere vulputate arcu. Phasellus accumsan cursus velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis orci. Phasellus consectetuer vestibulum elit. Aenean tellus metus, bibendum sed, posuere ac, mattis non, nunc. Vestibulum fringilla pede sit amet augue. In turpis. Pellentesque posuere. </p></>
-               
+              {activeTab === 'Description' && (
+                <> 
+                  <p>Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing.</p>
+                  <p>Praesent congue erat at massa. Sed cursus turpis vitae tortor. Donec posuere vulputate arcu.</p>
+                </>
               )}
               {activeTab === 'Material' && <p>Linen blend, durable rubber sole, and high-quality canvas.</p>}
               {activeTab === 'Reviews' && <p>Customer reviews will appear here.</p>}
             </div>
           </div>
 
-          {/* Right: Related Products */}
           <div className="related-products-container">
             <h3>Related products</h3>
             <div className="related-grid">
@@ -200,9 +219,113 @@ function ProDetails() {
               ))}
             </div>
           </div>
-
         </div>
       </div>
+
+      {/* 3. HERO SECTION */}
+      <div className="hero">
+        <img src="https://qx-shooz.myshopify.com/cdn/shop/files/filler2.png?v=1731652695" alt="hero" className="hero-img" />
+        <div className="hero-content">
+          <p className="hero-top">EFFORTLESS FASHION, EVERY DAY</p>
+          <h1 className="hero-heading">Chic Styles For The Modern Woman</h1>
+          <p className="hero-description">
+            Embrace effortless elegance with our curated collection of chic styles designed for the modern woman.
+          </p>
+        </div>
+      </div>
+
+      {/* 4. SPLIT HERO SECTION */}
+      <div className="split-hero">
+        <div className="split-container">
+          <div className="image-section">
+            <img src="https://qx-shooz.myshopify.com/cdn/shop/files/filler3.png?v=1731652694&width=900" alt="" className="main-img" />
+            <img src="https://qx-shooz.myshopify.com/cdn/shop/files/filler4.png?v=1731652693&width=360" alt="" className="overlay-img" />
+          </div>
+          <div className="text-section">
+            <p className="tag">CLASSIC MEETS CONTEMPORARY</p>
+            <h1>Timeless Styles With A Modern Edge</h1>
+            <p className="desc">Experience the best of both worlds with our collection that seamlessly blends timeless classics with modern twists.</p>
+            <button className="cta-btn">DISCOVER NOW</button>
+          </div>
+        </div>
+      </div>
+
+      {/* 5. ICON BAR */}
+      <div className='pd-icons'>
+        <div className='pd-icon'>
+          <img src="/img/i.png" alt="" />
+          <h3>Free Shipping</h3>
+          <p>From all orders over $100</p>
+        </div>
+        <div className='pd-icon'>
+          <img src="/img/i2.png" alt="" />
+          <h3>Quality Support</h3>
+          <p>24/7 online feedback</p>
+        </div>
+        <div className='pd-icon'>
+          <img src="/img/i3.png" alt="" />
+          <h3>Return & Refund</h3>
+          <p>Return money within 30 days</p>
+        </div>
+        <div className='pd-icon'>
+          <img src="/img/i4.png" alt="" />
+          <h3>Gift Voucher</h3>
+          <p>20% off when you shop online</p>
+        </div>
+      </div>
+
+      {/* 6. VIDEO HERO */}
+      <div className="video-hero">
+        <video autoPlay muted loop playsInline className="video-bg">
+          <source src="https://cdn.shopify.com/videos/c/o/v/4625c676b883437ebb9472d75b2f720c.mp4" type="video/mp4" />
+        </video>
+        <div className="video-content">
+          <p className="rating">★★★★★ 3000+ Reviews</p>
+          <h1>For the Explorers.</h1>
+          <p className="sub-text">Weekends are better with friends</p>
+        </div>
+      </div>
+
+      {/* 7. FAQ SECTION */}
+      <div className="faq-section">
+        <div className="faq-header">
+          <h2>FAQs</h2>
+          <p>Have a question? We are here to help.</p>
+        </div>
+        <div className="faq-list">
+          {faqData.map((item, index) => (
+            <div key={index} className="faq-item">
+              <div className="faq-question" onClick={() => toggleFaq(index)}>
+                <span>{item.question}</span>
+                <span className="faq-icon">{activeFaq === index ? '−' : '+'}</span>
+              </div>
+              <div className={`faq-answer ${activeFaq === index ? 'active' : ''}`}>
+                <div className="faq-answer-inner">{item.answer}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* 8. SALE EVENT BANNER (AT THE END) */}
+      <div className="sale-event-banner">
+        <div className="sale-content">
+          <div className="sale-text">
+            <h2>Sale Event</h2>
+            <p>We've refreshed our sale with discounts of up to 50% on select styles.</p>
+          </div>
+          <div className="sale-timer">
+           
+            <button className="end-deal-btn">End Deal</button>
+          </div>
+          <div className="sale-action">
+            <button className="shop-collection-btn">SHOP COLLECTION</button>
+          </div>
+        </div>
+      </div>
+
+      
+
     </div>
   );
 }

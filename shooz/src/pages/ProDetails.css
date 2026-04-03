@@ -350,3 +350,404 @@
   color: #000;
 }
 
+
+
+/* REMOVE default browser spacing */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* HERO FULL WIDTH FIX */
+.hero {
+  position: relative;
+  width: 100vw; /* full screen width */
+  height: 480px;
+  overflow: hidden;
+
+  /* break out of any parent container */
+  margin-left: calc(-50vw + 50%);
+}
+
+/* Image */
+.hero-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Gradient overlay */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.55) 20%,
+    rgba(0, 0, 0, 0.25) 50%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+}
+
+/* Content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Small text */
+.hero-top {
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  opacity: 0.85;
+   margin-top: 100px;
+}
+
+/* Heading */
+.hero-heading {
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  line-height: 1.2;
+}
+
+/* Description */
+.hero-description {
+  font-size: 16px;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+/* SECTION BACKGROUND */
+.split-hero {
+    padding: 80px 0;
+}
+
+/* MAIN LAYOUT */
+.split-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* IMAGE SECTION */
+.image-section {
+  position: relative;
+}
+
+/* BIG IMAGE */
+.main-img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+}
+
+/* SMALL OVERLAY IMAGE */
+.overlay-img {
+  position: absolute;
+  bottom: -40px;
+  right: -40px;
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* TEXT SECTION */
+.text-section {
+  padding-right: 40px;
+}
+
+/* TAG */
+.tag {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #888;
+  margin-bottom: 15px;
+}
+
+/* HEADING */
+.text-section h1 {
+  font-size: 42px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+/* DESCRIPTION */
+.desc {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+/* BUTTON */
+.cta-btn {
+  background: #b44b57;
+  color: #fff;
+  border: none;
+  padding: 14px 28px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cta-btn:hover {
+  background: #933944;
+}
+
+
+/* REMOVE DEFAULT SPACE */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* FULL WIDTH SECTION */
+.pd-icons {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: #f5f5f5;
+  padding: 60px 40px;
+  text-align: center;
+  margin-top: 70px;
+  height: 250px;
+}
+
+/* EACH ITEM */
+.pd-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ICON */
+.pd-icon img {
+  width: 55px;
+  height: 55px;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+/* TITLE */
+.pd-icon h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* TEXT */
+.pd-icon p {
+  font-size: 15px;
+  color: #888;
+}
+
+/* REMOVE DEFAULT SPACE */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* FULL WIDTH VIDEO SECTION */
+.video-hero {
+  position: relative;
+  width: 100vw;
+  height: 500px;
+  overflow: hidden;
+
+  /* break out of container */
+  margin-left: calc(-50vw + 50%);
+}
+
+/* VIDEO */
+.video-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* DARK OVERLAY */
+.video-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* CONTENT CENTER */
+.video-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  color: white;
+}
+
+/* TOP TEXT */
+.rating {
+  font-size: 14px;
+  margin-bottom: 15px;
+  opacity: 0.9;
+}
+
+/* MAIN HEADING */
+.video-content h1 {
+  font-size: 56px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+/* SUBTEXT */
+.sub-text {
+  font-size: 18px;
+  opacity: 0.85;
+}
+
+/* FAQ Section (End of Page) */
+.faq-section {
+  max-width: 1100px;
+  margin: 100px auto;
+  padding: 0 40px;
+  font-family: inherit;
+}
+
+.faq-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.faq-header h2 {
+  font-size: 42px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+
+.faq-header p {
+  color: #888;
+  font-size: 16px;
+}
+
+.faq-list {
+  border-top: 1px solid #eee;
+}
+
+.faq-item {
+  border-bottom: 1px solid #eee;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.faq-icon {
+  font-size: 22px;
+  font-weight: 300;
+  color: #000;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #666;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.faq-answer.active {
+  max-height: 300px; /* Large enough to fit text */
+}
+
+.faq-answer-inner {
+  padding-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+  .faq-header h2 { font-size: 32px; }
+  .faq-question { font-size: 16px; padding: 20px 0; }
+}
+/* Sale Event Banner Styles */
+.sale-event-banner {
+  background-color: #000;
+  color: #fff;
+  padding: 40px 60px;
+  margin-top: 80px;
+}
+
+.sale-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.sale-text h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.sale-text p {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.end-deal-btn {
+  background-color: #fdf3d3; /* Soft yellow from image */
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.shop-collection-btn {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 15px 35px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.shop-collection-btn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
