@@ -92,3 +92,45 @@
 .sec6-btn:hover {
   opacity: 0.7;
 }
+
+@media (max-width: 480px) {
+  .sec6-wrapper {
+    padding: 30px 15px;
+  }
+
+  .sec6-title1 {
+    font-size: 26px;
+  }
+
+  .sec6-p1 {
+    font-size: 14px;
+  }
+
+  .sec6-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .sec6-card,
+  .sec6-card-wide {
+    grid-column: span 1;
+    height: 220px;
+  }
+
+  .sec6-overlay {
+    padding: 20px;
+  }
+
+  .sec6-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .sec6-tag {
+    font-size: 10px;
+  }
+
+  .sec6-btn {
+    font-size: 12px;
+  }
+}

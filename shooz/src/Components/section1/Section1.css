@@ -1,6 +1,11 @@
+/* =========================
+   SECTION CONTAINER
+========================= */
 .sec1-container {
   width: 100%;
   height: 80vh;
+  min-height: 500px;
+  overflow: hidden;
 }
 
 .sec1-swiper {
@@ -14,48 +19,58 @@
   height: 100%;
 }
 
+/* =========================
+   BACKGROUND
+========================= */
 .sec1-bg {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
+/* Overlay */
 .sec1-overlay {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.45);
 }
 
-/* Base content */
+/* =========================
+   CONTENT BASE
+========================= */
 .sec1-content {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  color: white;
+  color: #fff;
   z-index: 2;
   max-width: 600px;
+  width: 90%;
 }
 
-/* RIGHT (Slide 1) */
+/* RIGHT */
 .sec1-content.right {
   right: 8%;
   text-align: left;
 }
 
-/* LEFT (Slide 2) */
+/* LEFT */
 .sec1-content.left {
   left: 8%;
   text-align: left;
 }
 
-/* CENTER (Slide 3) */
+/* CENTER */
 .sec1-content.center {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
 }
 
-/* Text styles */
+/* =========================
+   TEXT STYLING
+========================= */
 .sec1-tag {
   font-size: 12px;
   letter-spacing: 3px;
@@ -64,19 +79,22 @@
 }
 
 .sec1-title {
-  font-size: 56px;
-  font-weight: bold;
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 700;
   line-height: 1.2;
   margin-bottom: 20px;
 }
 
 .sec1-subtitle {
-  font-size: 18px;
+  font-size: clamp(14px, 2vw, 18px);
   color: #ccc;
   margin-bottom: 30px;
+  line-height: 1.6;
 }
 
-/* Button */
+/* =========================
+   BUTTON
+========================= */
 .sec1-btn {
   background: #c94b55;
   color: white;
@@ -84,14 +102,17 @@
   padding: 14px 32px;
   cursor: pointer;
   font-size: 14px;
-  transition: 0.3s;
+  transition: all 0.3s ease;
+  border-radius: 4px;
 }
 
 .sec1-btn:hover {
   background: #a93c45;
 }
 
-/* Pagination */
+/* =========================
+   SWIPER PAGINATION
+========================= */
 .swiper-pagination-bullet {
   background: white;
   opacity: 0.5;
@@ -102,45 +123,150 @@
   opacity: 1;
 }
 
-/* Responsive */
-@media (min-width: 820px) {
+/* =========================
+   TABLET (768px)
+========================= */
+@media (max-width: 768px) {
   .sec1-container {
-    height: 60vh; /* Adjusting height for the taller 820x1180 aspect ratio */
+    height: 75vh;
   }
 
   .sec1-content {
-    max-width: 550px;
-  }
-
-  /* Restore Original Positions for Larger Screens */
-  .sec1-content.right {
-    left: auto !important;
-    right: 8% !important;
-    text-align: left;
-  }
-
-  .sec1-content.left {
-    left: 8% !important;
-    right: auto !important;
-    text-align: left;
+    max-width: 90%;
   }
 
   .sec1-title {
-    font-size: 48px; /* Mid-point between mobile and desktop */
-  }
-
-  .sec1-subtitle {
-    font-size: 17px;
+    line-height: 1.25;
   }
 }
 
-/* --- Desktop Restore (Above 1024px) --- */
-@media (min-width: 1024px) {
+/* =========================
+   MOBILE (480px)
+========================= */
+@media (max-width: 480px) {
   .sec1-container {
-    height: 80vh;
+    height: 70vh;
+    min-height: 420px;
   }
-  
+
+  .sec1-content {
+    max-width: 90%;
+    left: 50% !important;
+    right: auto !important;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 0 12px;
+  }
+
+  /* Force center alignment */
+  .sec1-content.right,
+  .sec1-content.left,
+  .sec1-content.center {
+    left: 50% !important;
+    right: auto !important;
+    text-align: center;
+  }
+
+  .sec1-tag {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
   .sec1-title {
-    font-size: 56px;
+    font-size: 26px;
+  }
+
+  .sec1-subtitle {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  .sec1-btn {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+}
+
+/* =========================
+   EXTRA SMALL DEVICES (360px)
+========================= */
+@media (max-width: 360px) {
+  .sec1-title {
+    font-size: 22px;
+  }
+
+  .sec1-subtitle {
+    font-size: 12px;
+  }
+}/* =========================
+   FIX NAVBAR OVERLAP (NO UI CHANGE)
+========================= */
+.sec1-container {
+  position: relative;
+  padding-top: 120px; /* prevents text hiding behind navbar */
+  height: calc(100vh - 0px);
+}
+
+/* =========================
+   CONTENT POSITION FIX
+========================= */
+.sec1-content {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Prevent overflow on small screens */
+.sec1-title,
+.sec1-subtitle {
+  word-wrap: break-word;
+}
+
+/* =========================
+   BETTER TEXT READABILITY (NO VISUAL CHANGE)
+========================= */
+.sec1-overlay {
+  background: rgba(0, 0, 0, 0.45); /* same feel, more consistent */
+}
+
+/* =========================
+   IMAGE FIX (NO CROPPING ISSUES)
+========================= */
+.sec1-bg {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* =========================
+   BUTTON STABILITY
+========================= */
+.sec1-btn {
+  white-space: nowrap;
+}
+
+/* =========================
+   MOBILE FIXES (NO UI CHANGE)
+========================= */
+@media (max-width: 768px) {
+
+  .sec1-container {
+    padding-top: 80px; /* adjust for smaller navbar */
+  }
+
+  .sec1-content {
+    width: 92%;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+@media (max-width: 480px) {
+
+  .sec1-container {
+    padding-top: 70px;
+  }
+
+  .sec1-content {
+    padding: 0 10px;
   }
 }

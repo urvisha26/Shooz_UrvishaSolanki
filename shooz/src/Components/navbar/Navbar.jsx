@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Navbar.css'
 import { Link } from 'react-router-dom'
 
 function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   // Function to trigger the cart opening event
   const openCart = () => {
     const event = new Event('openCartSideBar');
@@ -24,15 +26,24 @@ function Navbar() {
 
       <header className='main-navbar'>
         <div className='nav-logo'>
-
           <img src="/img/logo.webp" alt="" />
         </div>
 
-        <nav className='nav-menu'>
+        {/* Burger Icon */}
+        <div 
+          className={`burger ${menuOpen ? 'active' : ''}`} 
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        {/* Nav Menu */}
+        <nav className={`nav-menu ${menuOpen ? 'open' : ''}`}>
           <ul>
             <li className='nav-active'>Home</li>
 
-    
             <li className='shop-nav-dropdown'>
               <span>Shop ▾</span>
 
@@ -90,6 +101,7 @@ function Navbar() {
                 </div>
               </div>
             </li>
+
             <li className='product-nav-dropdown'>
               <span>Product ▾</span>
 
@@ -143,12 +155,12 @@ function Navbar() {
                       <img src="/img/product1.webp" alt="" />
                       <p>Athletic Footwear</p>
                     </div>
-
                   </div>
 
                 </div>
               </div>
             </li>
+
             <li className='blog-nav-dropdown'>
               <span>Blog ▾</span>
 
@@ -193,45 +205,44 @@ function Navbar() {
                       <p>Athletic Footwear</p>
                       <span>8 products</span>
                     </div>
-
                   </div>
 
                 </div>
               </div>
             </li>
-            <li className='pages-nav-dropdown'>
-            <span>Pages ▾</span>
 
-          
-            <div className='pages-dropdown-menu'> 
-              <div className='pages-dropdown-container'>
-                <div className='pages-dropdown-column'>
-                  <p>About Us 1</p>
-                  <p>About Us 2</p>
-                  <p>About Us 3</p>
-                  <p>Without Filter</p>
-                  <p>Contact</p>
-                  <p>Faqs</p>
-                  <p>Lookbook</p>
-                  <p>sizeguide</p>
-                  <p>Wishlist</p>
+            <li className='pages-nav-dropdown'>
+              <span>Pages ▾</span>
+
+              <div className='pages-dropdown-menu'> 
+                <div className='pages-dropdown-container'>
+                  <div className='pages-dropdown-column'>
+                    <p>About Us 1</p>
+                    <p>About Us 2</p>
+                    <p>About Us 3</p>
+                    <p>Without Filter</p>
+                    <p>Contact</p>
+                    <p>Faqs</p>
+                    <p>Lookbook</p>
+                    <p>sizeguide</p>
+                    <p>Wishlist</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          </li>
+            </li>
 
             <li className='nav-buy'>
               Buy Now <span className='nav-badge'>Sale</span>
             </li>
           </ul>
         </nav>
+
         <div className='nav-icon'>
           <img src="/img/search.png" alt="" />
           <img src="/img/user.png" alt="" />
           <Link to="/Wishlist">
             <img src="/img/heart.png" alt="Wishlist" style={{ cursor: 'pointer' }} />
           </Link>
-          {/* Added onClick to your market icon */}
           <img 
             src="/img/market.png" 
             alt="" 

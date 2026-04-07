@@ -1,32 +1,140 @@
-.sec8-container{
-    display: flex;
-    margin-top: 60px;
+/* =========================
+   SECTION 8 CONTAINER
+========================= */
+.sec8-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  margin-top: 60px;
+  padding: 0 60px;
+  flex-wrap: wrap;
 }
-.sec8-content{
-    text-align: left;
-    margin-top: 80px;
-    padding-left: 60px;
-    padding-right: 50px;
+
+/* =========================
+   CONTENT
+========================= */
+.sec8-content {
+  flex: 1;
+  text-align: left;
+  margin-top: 40px;
 }
-.sec8-tag{
-    margin-bottom: 20px;
+
+/* Text */
+.sec8-tag {
+  margin-bottom: 15px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #777;
 }
-.sec8-title{
-    margin-bottom: 20px;
-    font-size: 70px;
+
+.sec8-title {
+  margin-bottom: 20px;
+  font-size: clamp(32px, 5vw, 70px);
+  font-weight: 700;
+  line-height: 1.2;
 }
-.sec8-des{
-    margin-bottom: 20px;
-    font-size: 18px;
+
+.sec8-des {
+  margin-bottom: 25px;
+  font-size: clamp(14px, 1.5vw, 18px);
+  line-height: 1.7;
+  color: #555;
+  max-width: 500px;
 }
-.sec8-image{
-    padding-right: 70px;
+
+/* Button */
+.sec8-btn {
+  border: none;
+  background-color: brown;
+  color: white;
+  height: 55px;
+  width: 180px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
 }
-.sec8-btn{
-    border: none;
-    background-color: brown;
-    color: white;
-    height: 60px;
-    width: 180px;
-    border-radius: 2px;
+
+.sec8-btn:hover {
+  background-color: #8b0000;
+}
+
+/* =========================
+   IMAGE
+========================= */
+.sec8-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.sec8-image img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/* =========================
+   TABLET (768px)
+========================= */
+@media (max-width: 768px) {
+  .sec8-container {
+    flex-direction: column;
+    padding: 0 20px;
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .sec8-content {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .sec8-des {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .sec8-btn {
+    margin: 20px auto 0;
+  }
+
+  .sec8-image {
+    margin-top: 20px;
+  }
+}
+
+/* =========================
+   MOBILE (480px)
+========================= */
+@media (max-width: 480px) {
+  .sec8-title {
+    font-size: 26px;
+  }
+
+  .sec8-des {
+    font-size: 13px;
+  }
+
+  .sec8-btn {
+    height: 45px;
+    width: 150px;
+    font-size: 13px;
+  }
+}
+
+/* =========================
+   EXTRA SMALL (360px)
+========================= */
+@media (max-width: 360px) {
+  .sec8-title {
+    font-size: 22px;
+  }
+
+  .sec8-des {
+    font-size: 12px;
+  }
 }

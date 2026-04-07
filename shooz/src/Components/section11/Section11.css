@@ -1,69 +1,184 @@
-.sec11-container{
-    text-align: left;
-    margin-top: 20px;
-    padding: 0 60px;
-    margin-bottom: -100px;
+/* =========================
+   SECTION 11 CONTAINER
+========================= */
+.sec11-container {
+  text-align: left;
+  margin-top: 40px;
+  padding: 0 60px;
+  margin-bottom: 60px;
 }
-.sec11-tag{
-    font-size: 15px;
-    margin-bottom: 1px;
-    color: grey;
+
+/* =========================
+   TEXT
+========================= */
+.sec11-tag {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: grey;
+  letter-spacing: 1px;
 }
-.sec11-title{
-    font-size: 50px;
-    margin-bottom: 10px;
+
+.sec11-title {
+  font-size: clamp(28px, 4vw, 50px);
+  margin-bottom: 15px;
+  font-weight: 700;
 }
-.sec11-des{
-    font-size: 17px;
-    margin-bottom: 30px;
-    color: grey;
+
+.sec11-des {
+  font-size: clamp(14px, 1.5vw, 17px);
+  margin-bottom: 40px;
+  color: grey;
+  line-height: 1.6;
+  max-width: 600px;
 }
-.sec11-content{
-    display: flex;
+
+/* =========================
+   CONTENT LAYOUT
+========================= */
+.sec11-content {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
 }
-.sec11-left{
-    position: relative;
+
+/* =========================
+   LEFT IMAGE
+========================= */
+.sec11-left {
+  position: relative;
+  flex: 1;
 }
-.sec11-left img{
-    width: 80%;
-    height: 80%;
-    object-fit: cover;
-    border-radius: 5px;
+
+.sec11-left img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
 }
-.sec11-left-text-overlay{
-    position: relative;
-    bottom: 120px;
-    left: 20px;
-    color: white;
-    font-size: 20px;
-    line-height: 2;
+
+/* Overlay text */
+.sec11-left-text-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  font-size: 18px;
+  line-height: 1.5;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 10px 14px;
+  border-radius: 4px;
 }
-.sec11-right{
-    flex: 1;
-    display: flex;
+
+/* =========================
+   RIGHT SIDE
+========================= */
+.sec11-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Cards */
+.sec11-card {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+/* Card image */
+.sec11-card img {
+  width: 180px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+/* Card text */
+.sec11-card-text p {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.sec11-card-text h4 {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+/* =========================
+   TABLET (768px)
+========================= */
+@media (max-width: 768px) {
+  .sec11-container {
+    padding: 0 20px;
+    margin-bottom: 40px;
+  }
+
+  .sec11-content {
     flex-direction: column;
-    gap: 20px;
+    gap: 25px;
+  }
+
+  /* Left image */
+  .sec11-left img {
+    width: 100%;
+  }
+
+  .sec11-left-text-overlay {
+    font-size: 14px;
+    bottom: 15px;
+    left: 15px;
+  }
+
+  /* Cards */
+  .sec11-card img {
+    width: 110px;
+    height: 80px;
+  }
+
+  .sec11-card-text p {
+    font-size: 12px;
+  }
+
+  .sec11-card-text h4 {
+    font-size: 14px;
+  }
 }
-.sec11-card{
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    margin-left: -140px;
+
+/* =========================
+   MOBILE (480px)
+========================= */
+@media (max-width: 480px) {
+  .sec11-title {
+    font-size: 24px;
+  }
+
+  .sec11-des {
+    font-size: 13px;
+  }
+
+  .sec11-card {
+    gap: 10px;
+  }
+
+  .sec11-card img {
+    width: 90px;
+    height: 70px;
+  }
 }
-.sec11-card img{
-    width: 250px;
-    height: 140px;
-    object-fit: cover;
-    border-radius: 4px;
-}
-.sec11-card-text p{
-    color: #888;
+
+/* =========================
+   EXTRA SMALL (360px)
+========================= */
+@media (max-width: 360px) {
+  .sec11-title {
     font-size: 20px;
-    margin-bottom: 5px;
-    
-}
-.sec11-card-text h4{
-    margin: 0;
-    font-size: 22px;
-    margin-right: -200px;
+  }
+
+  .sec11-card-text h4 {
+    font-size: 13px;
+  }
 }

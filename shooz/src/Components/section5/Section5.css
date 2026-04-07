@@ -70,3 +70,44 @@
     transform: scale(1.1); /* Zoom in by 10% */
 }
 
+@media (max-width: 480px) {
+  .sec5-top {
+    margin-top: 50px;
+    padding: 0 15px;
+  }
+
+  .sec5-title {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .sec5-p {
+    font-size: 14px;
+  }
+
+  .sec5-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 40px 15px;
+  }
+
+  .sec5-card {
+    aspect-ratio: 1 / 1.2;
+  }
+
+  .sec5-label-wrapper {
+    height: 40px;
+    width: 90%;
+    bottom: 10px;
+  }
+
+  .sec5-label {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  /* Reduce zoom effect for mobile */
+  .sec5-card:hover .sec5-img {
+    transform: scale(1.05);
+  }
+}

@@ -88,13 +88,48 @@
 }
 
 
-@media (max-width: 900px) {
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 60px 20px 20px;
+  }
+
   .footer-top {
     flex-direction: column;
-    text-align: center;
+    gap: 30px;
+    padding-bottom: 40px;
   }
+
+  .footer-col {
+    width: 100%;
+  }
+
+  .footer-col h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  .footer-col ul li {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .footer-logo img {
+    max-width: 120px;
+  }
+
+  .center-col p {
+    font-size: 13px;
+  }
+
   .footer-bottom {
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
+    text-align: center;
+    font-size: 13px;
+  }
+
+  .payment-icons img {
+    height: 20px;
   }
 }

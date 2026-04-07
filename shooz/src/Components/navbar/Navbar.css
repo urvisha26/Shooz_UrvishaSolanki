@@ -8,14 +8,23 @@ body {
   overflow-x: hidden;
 }
 
-/* --- TOP BAR --- */
+/* =========================
+   TOP BAR (OVER HERO)
+========================= */
 .nav-topbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 8px 40px;
   font-size: 14px;
-  background: #f5f5f5;
+
+  position: absolute; /* NEW */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent; /* NEW */
+  color: white; /* NEW */
+  z-index: 1001;
 }
 
 .nav-right span {
@@ -26,24 +35,67 @@ body {
 .nav-right img {
   width: 14px;
   height: 14px;
+  filter: brightness(0) invert(1); /* NEW */
 }
 
-/* --- MAIN NAVBAR --- */
+/* =========================
+   MAIN NAVBAR (OVER HERO)
+========================= */
 .main-navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   padding: 15px 40px;
-  border-bottom: 1px solid #eee;
-  background: #fff;
-  position: relative;
+
+  position: absolute; /* CHANGED */
+  top: 40px; /* below topbar */
+  left: 0;
+  width: 100%;
+
+  background: transparent; /* CHANGED */
+  border-bottom: none; /* CHANGED */
+
+  z-index: 1000;
 }
 
+/* Logo */
 .nav-logo img {
   height: 40px;
 }
 
-/* --- MENU NAVIGATION --- */
+/* =========================
+   BURGER
+========================= */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 10001;
+}
+
+.burger span {
+  width: 25px;
+  height: 3px;
+  background: #fff; /* CHANGED (white for hero) */
+  transition: 0.3s;
+}
+
+/* Animation */
+.burger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.burger.active span:nth-child(2) {
+  opacity: 0;
+}
+.burger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* =========================
+   MENU
+========================= */
 .nav-menu ul {
   display: flex;
   list-style: none;
@@ -54,25 +106,27 @@ body {
 .nav-menu li {
   cursor: pointer;
   font-size: 16px;
-  color: #333;
+  color: #fff; /* CHANGED */
   transition: 0.3s;
-  position: static; /* Required for full-width mega menus */
+  position: static;
 }
 
 .nav-menu li:hover {
-  color: red;
+  color: #ff4d5a; /* UPDATED */
 }
 
 .nav-active {
-  color: red !important;
+  color: #ff4d5a !important;
 }
 
-/* --- MEGA MENU BASE (Shop, Product, Blog) --- */
+/* =========================
+   MEGA MENU
+========================= */
 .shop-dropdown-menu,
 .product-dropdown-menu,
 .blog-dropdown-menu {
   position: absolute;
-  top: 100%; /* Starts exactly under the navbar border */
+  top: 100%;
   left: 0;
   width: 100vw;
   background: #fff;
@@ -81,7 +135,7 @@ body {
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
-  z-index: 1000;
+  z-index: 9999;
   border-top: 1px solid #eee;
 }
 
@@ -92,7 +146,7 @@ body {
   visibility: visible;
 }
 
-/* --- GRID CONTAINERS --- */
+/* GRID */
 .shop-dropdown-container,
 .product-dropdown-container,
 .blog-dropdown-container {
@@ -103,12 +157,11 @@ body {
   padding: 0 40px;
 }
 
-/* Specific Columns for each */
 .shop-dropdown-container { grid-template-columns: 1fr 1fr 1fr 2fr; }
 .product-dropdown-container { grid-template-columns: 1fr 1fr 1fr 1fr 1.5fr; }
 .blog-dropdown-container { grid-template-columns: 1fr 1fr 1fr 2fr; }
 
-/* Inner text styles */
+/* TEXT */
 .shop-dropdown-column h4, 
 .product-dropdown-column h4, 
 .blog-dropdown-column h4 {
@@ -135,7 +188,7 @@ body {
   padding-left: 5px;
 }
 
-/* --- IMAGES SECTION --- */
+/* IMAGES */
 .shop-dropdown-images, 
 .product-dropdown-images, 
 .blog-dropdown-images {
@@ -148,7 +201,6 @@ body {
 .blog-img-box img {
   width: 100%;
   max-width: 200px;
-  height: auto;
   border-radius: 4px;
 }
 
@@ -160,9 +212,11 @@ body {
   color: #000 !important;
 }
 
-/* --- PAGES DROPDOWN (Simple Vertical List) --- */
+/* =========================
+   PAGES DROPDOWN
+========================= */
 .pages-nav-dropdown {
-  position: relative !important; /* Overrides static to stay under 'Pages' */
+  position: relative !important;
 }
 
 .pages-dropdown-menu {
@@ -174,7 +228,7 @@ body {
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
   padding: 15px 20px;
   display: none;
-  z-index: 1000;
+  z-index: 9999;
   border-top: 1px solid #eee;
 }
 
@@ -188,11 +242,6 @@ body {
   padding: 10px 0;
   margin: 0;
   border-bottom: 1px solid #f9f9f9;
-  transition: 0.3s;
-}
-
-.pages-dropdown-column p:last-child {
-  border-bottom: none;
 }
 
 .pages-dropdown-column p:hover {
@@ -200,7 +249,9 @@ body {
   padding-left: 8px;
 }
 
-/* --- UTILITY & ICONS --- */
+/* =========================
+   ICONS
+========================= */
 .nav-badge {
   background: #28a745;
   color: white;
@@ -208,7 +259,6 @@ body {
   padding: 2px 6px;
   border-radius: 10px;
   margin-left: 5px;
-  vertical-align: top;
 }
 
 .nav-icon {
@@ -220,4 +270,101 @@ body {
   width: 18px;
   height: 18px;
   cursor: pointer;
+  filter: brightness(0) invert(1); /* NEW */
+}
+/* =========================
+   FORCE BLACK NAVBAR (VISIBLE)
+========================= */
+.main-navbar,
+.nav-topbar {
+  color: #000;
+}
+
+/* TEXT */
+.nav-menu li {
+  color: #000 !important;
+}
+
+.nav-active {
+  color: #ff4d5a !important;
+}
+
+/* ICONS */
+.nav-icon img,
+.nav-right img {
+  filter: none !important; /* remove white filter */
+}
+
+/* BURGER */
+.burger span {
+  background: #000;
+}
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+
+  .burger {
+    display: flex;
+  }
+
+  .nav-topbar {
+    display: none; /* cleaner mobile */
+  }
+
+  .main-navbar {
+    position: fixed;
+    top: 0;
+    background: #fff;
+    padding: 12px 15px;
+  }
+
+  .burger span {
+    background: #000;
+  }
+
+  .nav-menu li {
+    color: #000;
+  }
+
+  .nav-icon img {
+    filter: none;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: #fff;
+    padding: 60px 20px;
+    transition: 0.3s ease;
+    z-index: 9999;
+    overflow-y: auto;
+  }
+
+  .nav-menu.open {
+    right: 0;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+}
+
+/* =========================
+   SMALL
+========================= */
+@media (max-width: 480px) {
+
+  .nav-logo img {
+    height: 28px;
+  }
+
+  .nav-menu {
+    width: 250px;
+  }
 }

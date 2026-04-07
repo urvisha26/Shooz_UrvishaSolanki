@@ -70,13 +70,45 @@
     display: block;
 }
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    .sec12-container {
-        flex-direction: column;
-        margin: 20px;
-    }
-    .sec12-p {
-        font-size: 32px;
-    }
+@media (max-width: 480px) {
+  .sec12-container {
+    flex-direction: column;
+    margin: 20px 10px;
+  }
+
+  .sec12-left {
+    padding: 30px 15px;
+  }
+
+  .sec12-p {
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .input-group {
+    flex-direction: column;
+    height: auto;
+    gap: 10px;
+  }
+
+  .sec12-input {
+    height: 45px;
+    font-size: 14px;
+  }
+
+  .sec12-btn {
+    height: 45px;
+    width: 100%;
+    font-size: 13px;
+  }
+
+  .sec12-right {
+    height: 200px;
+  }
+
+  .sec12-right img {
+    height: 100%;
+    object-fit: cover;
+  }
 }

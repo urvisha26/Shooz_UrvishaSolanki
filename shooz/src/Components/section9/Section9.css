@@ -27,3 +27,26 @@
     color: white;
     background-color: rgb(109, 89, 200);
 }
+@media (max-width: 480px) {
+  .sec9-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    height: auto;
+    padding: 20px 15px;
+    text-align: center;
+  }
+
+  .sec9-text {
+    margin: 0;
+    font-size: 16px;
+  }
+
+  .sec9-btn {
+    margin: 0;
+    height: 45px;
+    width: 150px;
+    font-size: 13px;
+  }
+}
